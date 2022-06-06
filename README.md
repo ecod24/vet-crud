@@ -1,17 +1,26 @@
 # Your Mission
 
-Create a pokedex
+Create a veternarian app where we can add and remove patients, and view patient / owner info.
+This app uses [this api](https://github.com/joinpursuit/resource-veterinarian-api) from previous labs.
 
 # Requirements
 
-- Index page shows a list of all the pokemon currently in your pokedex.
-- You can visit a `/new` page, which will allow you to add a new pokemon to your pokedex by typing its name.
-- You can visit `/pokemon/:id` and see the individual pokemon **IF it's in the pokedex.**
-- Clicking on a pokemon icon on the `index` page will take you to that pokemon's detail page.
-  - You can also edit the pokemon's nickname.
-- You can delete a pokemon from the pokedex by clicking a delete button on the index page..
+- User can see current patients by going to the home page (`/`)
+- User can view all pets by going to `/pets`
+- User can add a new patient by clicking a button next to the pet.
+- User can add a new pet by going to `/pets/new`
+- User can see pet details by going to `/pet/:id`
 
-# Stretch / Bonus / Discussion
+# More Requirements
 
-- What would this look like if we wanted to support multiple pokedexes?
-- What would this look like if we wanted to assign a pokedex to a trainer?
+- See a list of owners by going to `/owners`
+- See owner details by going to `/owner/:id`
+
+# Stretch
+
+- Show a spinner icon while data is loading
+- Add a new owner
+
+# Extra Bonus / Stretch
+
+- Update an owner / pet relationship.

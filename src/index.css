@@ -4,7 +4,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('https://64.media.tumblr.com/46dc6aba55acce24953bbc1b09bd674c/tumblr_nuxz3ukZ7r1qk9nv0o1_500.png');
+  background: url('https://media.istockphoto.com/photos/teal-and-white-doggy-tile-pattern-repeat-background-picture-id489553794?k=20&m=489553794&s=612x612&w=0&h=CNoDoEia_B1XX4wupbkdfZcUf8mpaFZ8fhT_uIKzirs=');
   background-repeat: repeat;
   display: flex;
   justify-content: center;
@@ -18,28 +18,66 @@ header {
 .App {
   margin-top: 10vh;
   background-color: white;
-  border-radius: 20px 20px 20px 20px;
-  padding-bottom: 25px;
   box-shadow: 10px 10px 50px gray;
   border: 1px solid black;
 }
 
-.pokedex {
+.nav {
+  display: flex;
+  border: 1px solid navy;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.list {
   display: flex;
   width: 80vw;
-  height: 70vh;
+  min-height: 10vh;
   flex-wrap: wrap;
   justify-content: center;
   flex-basis: 80vw;
 }
 
-.pokemon {
-  flex: 1 0 200px;
+.item {
+  flex: 1 0 150px;
   text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
 }
 
-.pokemon img {
+.item img {
   border: 1px solid red;
   border-radius: 15px;
   box-shadow: 5px 5px 5px pink;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+
+.loading {
+  height: 50px;
+  width: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }

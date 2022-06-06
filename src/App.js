@@ -1,30 +1,31 @@
 import React from 'react';
-import { getPokemonByName } from './utils/helper';
+import { Link, Route, Routes } from 'react-router-dom';
+import Patients from './components/Patients';
+import Pets from './components/Pets';
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      myPokemon: [
-        getPokemonByName('chansey'),
-        getPokemonByName('jigglypuff'),
-        getPokemonByName('ekans'),
-      ],
+      myPatients: [],
     };
   }
+
+  addPatient = (newPatient) => {
+    let updatedPatients = [...this.state.myPatients, newPatient];
+    this.setState({ myPatients: updatedPatients });
+  };
+
   render() {
     return (
       <div className="App">
-        <header>My Pokedex</header>
-        <div className="pokedex">
-          {this.state.myPokemon.map(({ id, name, image }) => {
-            return (
-              <div key={id} className="pokemon">
-                <h3>{name}</h3>
-                <img src={image} alt={name} />
-              </div>
-            );
-          })}
+        <div className="nav">
+          <Link to="/">Patients</Link>
+          <Link to="/pets">Pets</Link>
         </div>
+        <Routes>
+          <Route path="/" element={<Patients patient_list={this.state.myPatients} />} />
+          <Route path="/pets" element={<Pets add_patient={this.addPatient} />} />
+        </Routes>
       </div>
     );
   }
